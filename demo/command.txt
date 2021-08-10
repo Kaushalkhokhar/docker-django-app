@@ -27,3 +27,8 @@ DATABASES = {
         'PORT': 5432,
     }
 }
+
+To install packages 
+docker exec -it container_name /bin/bash
+pip install <name-of-package>
+pip freeze > requirements.txt
