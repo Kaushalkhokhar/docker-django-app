@@ -1,0 +1,29 @@
+docker-compose build
+docker-compose run --rm app django-admin startproject core .
+docker-compose up
+docker exec -it container_name /bin/bash
+
+To remove all the images
+docker rmi $(docker images -a -q) -f
+
+To remove all the container
+docker rm $(docker ps -a -q)
+
+To overcome with no such file problem
+on windows terminal run the commmand
+wsl --shutdown
+
+To refresh network
+docker-compose down -v
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432,
+    }
+}
